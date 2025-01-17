@@ -76,7 +76,14 @@ Cart System: Add items to a cart and review them before proceeding to checkout.
 
 
 
+Achievement
+This project was submitted as part of the Web Technology course at PES University and received a perfect 20/20 grade, showcasing its quality and functionality.
 
+Contributing
+Contributions are welcome! Feel free to fork the repository, make changes, and create a pull request.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
 
