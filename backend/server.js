@@ -205,7 +205,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const MONGO_URI = 'mongodb://localhost:27017/Database';
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key'; // JWT secret from environment variables
 
