@@ -2,33 +2,35 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 
-// Component imports (keep as is)
 import Home from './modules/inde';
 import ProductPage from './modules/ProductPage';
 import Products from './modules/Products';
-import Categories from './components/Category/Categories'
+import Categories from './components/Category/Categories';
 import Cart from './modules/Cart';
 import AboutUs from './modules/About';
 import ContactUs from './modules/contact';
 import PaymentPage from './modules/payment';
 import Login from './modules/Loginpage/login';
 import Signup from './modules/sign/signup';
-import Dashboard from'./modules/Dashboard/DashBoard';
+import Dashboard from './modules/Dashboard/DashBoard';
 import Profile from './components/Profile/ProfileUser';
 import ProtectedRoute from './modules/Protect/ProtectedRoute';
 
+// Import fallback product data
+import { products as fallbackProducts } from './data';
+
 function App() {
-  const [products, setProducts] = useState([]);
-  const amount = 500; // You can make this dynamic later
+  const [products, setProducts] = useState(fallbackProducts);
+  const amount = 500; // Replace with dynamic cart amount later if needed
 
   useEffect(() => {
-    // Call your backend to get products
     axios.get('https://ecommerce-website-mern-1-r2ss.onrender.com/api/products')
       .then((res) => {
         setProducts(res.data);
       })
       .catch((err) => {
         console.error("Error fetching products:", err.message);
+        // fallbackProducts will continue to show if backend fails
       });
   }, []);
 
